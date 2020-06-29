@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:stdout-reach/hello-lerna.git",
+  "author": "stdout-reach <nico.greco@outreach.io>",
+  "license": "MIT"
+}
