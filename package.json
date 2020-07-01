@@ -6,9 +6,16 @@
   ],
   "scripts": {
     "lerna": "lerna",
-    "webpack": "webpack"
+    "build": "lerna run build",
+    "build:dev": "lerna run build:dev"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@material-ui/core": "^4.11.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
     "html-webpack-plugin": "^4.3.0",
     "lerna": "^3.22.1",
     "react": "^16.13.1",

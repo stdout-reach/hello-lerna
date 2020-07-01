@@ -1,32 +1,28 @@
 {
-  "name": "@stdout/core",
+  "name": "app",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "stdout-reach <nico.greco@outreach.io>",
   "homepage": "https://github.com/stdout-reach/hello-lerna#readme",
   "license": "ISC",
-  "main": "app/index.js",
+  "main": "src/app.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
-    "app"
+    "src"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stdout-reach/hello-lerna.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "compile": "tsc -b",
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development"
   },
   "bugs": {
     "url": "https://github.com/stdout-reach/hello-lerna/issues"
-  },
-  "dependencies": {
-    "@stdout/snackbar": "*"
   }
 }

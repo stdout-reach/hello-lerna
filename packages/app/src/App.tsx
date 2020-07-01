@@ -1,12 +1,11 @@
 import React from 'react';
-
-import Snackbar from '@stdout/snackbar';
+import { Button } from 'ui';
 
 export default function App() {
   return (
     <>
       <span>Hello, World!</span>
-      <Snackbar/>
+      <Button variant="contained" color="primary">Click Me</Button>
     </>
   );
 };

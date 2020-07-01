@@ -1,11 +1,11 @@
-# `@stdout/core`
+# `ui`
 
 > TODO: description
 
 ## Usage
 
 ```
-const core = require('@stdout/core');
+const ui = require('ui');
 
 // TODO: DEMONSTRATE API
 ```

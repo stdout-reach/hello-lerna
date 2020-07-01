@@ -1,12 +1,36 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-module.exports = function (env, options) {
+function pickLoader(loader) {
+  if (loader == 'babel') {
+    return {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          '@babel/preset-react',
+          ['@babel/preset-typescript', { isTSX: true, allExtensions: true }]
+        ],
+        plugins: [
+          [
+            'babel-plugin-import',
+            {
+              libraryName: 'ui',
+              libraryDirectory: 'dist',
+              'camel2DashComponentName': false
+            }
+          ]
+        ]
+      }
+    };
+  }
+
+  return 'ts-loader';
+}
+
+module.exports = function (env, options, dirname) {
   return {
-    mode: env === 'production' || 'development',
-    entry: path.resolve(__dirname, 'packages/core/app'),
+    mode: env,
     output: {
-      path: path.resolve(__dirname, './dist'),
+      path: path.resolve(dirname, 'dist'),
       filename: 'main-[hash].js'
     },
     resolve: {
@@ -16,15 +40,10 @@ module.exports = function (env, options) {
       rules: [
         {
           test: /.tsx?$/,
-          use: 'ts-loader',
+          use: pickLoader(options.loader),
           exclude: /node_modules/
         }
       ]
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'packages/core/app/index.html')
-      })
-    ]
+    }
   };
 };

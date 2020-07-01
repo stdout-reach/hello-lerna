@@ -4,12 +4,12 @@
     "target": "es2015",
     "module": "es2015",
     "baseUrl": ".",
-    "rootDir": "./packages/core/app",
+    "rootDir": ".",
     "alwaysStrict": true,
     "jsx": "react",
     "skipLibCheck": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules"],
-  "include": ["./packages/core/**/*.tsx", "./packages/core/**/*.ts"]
+  "exclude": ["node_modules"]
 }
